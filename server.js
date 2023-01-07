@@ -34,6 +34,16 @@ app.get("/posts", async (req, res) => {
     console.log(error);
   }
 });
+// Endpoint Post
+app.post("/posts", async (req, res) => {
+  try {
+    const payload = req.body;
+    await addPost(payload);
+    res.send("Post creado con exito");
+  } catch (error) {
+    console.log(error);
+  }
+});
 
 
 app.listen(3000, console.log("SERVIDOR ENCENDIDO"));
