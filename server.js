@@ -44,6 +44,19 @@ app.post("/posts", async (req, res) => {
     console.log(error);
   }
 });
+// Endpoint Like
+app.put("/posts/like/:id", async (req, res) => {
+  try {
+    console.log("put")
+    const { id } = req.params;
+    const resp = await addLike(id);
+    console.log(resp);
+    res.send(resp);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 
 
 app.listen(3000, console.log("SERVIDOR ENCENDIDO"));
