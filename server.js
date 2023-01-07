@@ -56,7 +56,16 @@ app.put("/posts/like/:id", async (req, res) => {
     console.log(error);
   }
 });
-
+//Endpoint Eliminar posts
+app.delete("/posts/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    await deletePost(id);
+    res.json({ message: "Eliminado con exito el Post" });
+  } catch (error) {
+    console.log(error);
+  }
+});
 
 
 app.listen(3000, console.log("SERVIDOR ENCENDIDO"));
