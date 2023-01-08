@@ -34,7 +34,6 @@ app.get("/posts", async (req, res) => {
     console.log(error);
   }
 });
-// Endpoint Post
 app.post("/posts", async (req, res) => {
   try {
     const payload = req.body;
@@ -47,7 +46,7 @@ app.post("/posts", async (req, res) => {
 // Endpoint Like
 app.put("/posts/like/:id", async (req, res) => {
   try {
-    console.log("put")
+    console.log("put");
     const { id } = req.params;
     const resp = await addLike(id);
     console.log(resp);
@@ -56,6 +55,7 @@ app.put("/posts/like/:id", async (req, res) => {
     console.log(error);
   }
 });
+
 //Endpoint Eliminar posts
 app.delete("/posts/:id", async (req, res) => {
   try {
